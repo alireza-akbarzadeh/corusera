@@ -26,19 +26,19 @@ export function LoginSection() {
                             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                         >
                             <img
-                                src="/assets/roblox-logo.png"
+                                src="/favicon.ico"
                                 alt="Illustration"
                                 className="md:w-90 mx-auto h-auto w-full"
                             />
                         </motion.div>
-                        {/* <motion.h1
-              className="text-2xl md:text-4xl font-bold leading-tight tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            >
-              The make money app
-            </motion.h1> */}
+                        <motion.h1
+                            className="text-2xl md:text-4xl font-bold leading-tight tracking-tight"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        >
+                            The make money app
+                        </motion.h1>
                     </div>
                 </motion.div>
 

@@ -125,7 +125,7 @@ export function PricingSection() {
     };
 
     return (
-        <div className="container py-20">
+        <section id='pricing' className="container py-20">
             <div className="mb-12 space-y-4 text-center">
                 <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
                     Simple, transparent pricing for all.
@@ -264,6 +264,6 @@ export function PricingSection() {
                     </motion.div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
