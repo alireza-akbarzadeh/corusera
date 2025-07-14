@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { hashedPassword } from "./utils";
+import { env } from "@/env";
 // If your Prisma file is located elsewhere, you can change the path
 const isValid = false;
 
@@ -12,12 +13,12 @@ export const auth = betterAuth({
   }),
   socialProviders: {
     github: {
-      clientId: "",
-      clientSecret: "",
+      clientId: env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
+      clientSecret: env.NEXT_PUBLIC_GITHUB_CLIENT_SECRET,
     },
     google: {
-      clientId: "",
-      clientSecret: "",
+      clientId: env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+      clientSecret: env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
     },
   },
   emailAndPassword: {

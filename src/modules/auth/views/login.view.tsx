@@ -175,6 +175,25 @@ export function LoginView() {
                                 </motion.div>
 
                                 {/* Terms */}
+                                {/* Already have account link */}
+                                <motion.div
+                                    className="text-center"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5, delay: 1.2, ease: "easeOut" }}
+                                >
+                                    <p className="text-sm text-white/70">
+                                        Don't have an account?{" "}
+                                        <Link
+                                            href="/register"
+                                            className="text-white font-medium underline hover:text-purple-300 transition-colors duration-300"
+                                        >
+                                            Sign up
+                                        </Link>
+                                    </p>
+                                </motion.div>
+
+
                                 <motion.p
                                     className="mt-4 text-center text-xs text-white/60"
                                     initial={{ opacity: 0 }}
