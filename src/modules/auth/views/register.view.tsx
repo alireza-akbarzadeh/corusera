@@ -5,13 +5,13 @@ import { useState } from "react"
 import { Eye, EyeOff } from "lucide-react"
 
 import { motion } from "motion/react"
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import AuthLayoutView from "./Auth.view"
+import { SocialButtons } from "../ui/social-buttons"
 
 
 
@@ -211,32 +211,7 @@ export function RegisterView() {
                                 </motion.div>
 
                                 {/* Social Registration Buttons */}
-                                <motion.div
-                                    className="space-y-3"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 1.1, ease: "easeOut" }}
-                                >
-                                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                                        <Button
-                                            variant="secondary"
-                                            className="w-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"
-                                        >
-                                            <Image src="/svg/google.svg" alt="google icon" width={19} height={19} />
-                                            <span className="ml-2">Sign up with Google</span>
-                                        </Button>
-                                    </motion.div>
-                                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                                        <Button
-                                            variant="secondary"
-                                            className="w-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"
-                                        >
-                                            <Image src="/svg/github.svg" alt="github icon" width={20} height={20} />
-                                            <span className="ml-2">Sign up with Github</span>
-                                        </Button>
-                                    </motion.div>
-                                </motion.div>
-
+                                <SocialButtons />
                                 {/* Already have account link */}
                                 <motion.div
                                     className="text-center"
@@ -283,6 +258,6 @@ export function RegisterView() {
                     </motion.div>
                 </motion.div>
             </div>
-        </AuthLayoutView>
+        </AuthLayoutView >
     )
 }
