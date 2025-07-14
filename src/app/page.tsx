@@ -1,10 +1,7 @@
-import { PricingSection } from "@/components/sections";
-import Link from "next/link";
+import { HomeView } from "@/modules/Home";
 
 export default function HomePage() {
 	return (
-		<main>
-			<PricingSection />
-		</main>
-	);
+		<HomeView />
+	)
 }

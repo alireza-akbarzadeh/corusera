@@ -1,10 +1,10 @@
-import { DashboardModule } from "@/containers/dashboard";
+import { DashboardView } from "@/modules/dashboard";
 
 
 export default function DashboardPage() {
 
     return (
-        <DashboardModule />
+        <DashboardView />
     )
 
 }

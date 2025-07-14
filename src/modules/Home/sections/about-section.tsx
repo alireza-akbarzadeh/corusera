@@ -11,9 +11,9 @@ import {
     Rocket,
     Target,
 } from 'lucide-react';
-import { Spotlight } from './spotlight';
-import { BorderBeam } from './border-beam';
-import { CardHoverEffect } from './pulse-card';
+import { Spotlight } from '../ui/spotlight';
+import { BorderBeam } from '../ui/border-beam';
+import { CardHoverEffect } from '../ui/pulse-card';
 
 interface AboutUsProps {
     title?: string;
@@ -65,7 +65,7 @@ const defaultValues: AboutUsProps['values'] = [
     },
 ];
 
-export default function AboutUs1() {
+export function AboutSection() {
     const aboutData = {
         title: 'About Us',
         subtitle:
@@ -100,10 +100,10 @@ export default function AboutUs1() {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="mx-auto mb-16 max-w-2xl text-center"
                 >
-                    <h1 className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+                    <h1 className="bg-gradient-to-r from-white via-blue-300 to-purple-300 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
                         {aboutData.title}
                     </h1>
-                    <p className="mt-6 text-xl text-muted-foreground">
+                    <p className="mt-6 text-xl text-gray-300">
                         {aboutData.subtitle}
                     </p>
                 </motion.div>
@@ -120,24 +120,24 @@ export default function AboutUs1() {
                     >
                         <motion.div
                             whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
-                            className="group relative block overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br p-10 backdrop-blur-3xl"
+                            className="group relative block overflow-hidden rounded-2xl border border-white/10 bg-[rgba(30,30,40,0.7)] p-10 backdrop-blur-2xl"
                         >
                             <BorderBeam
                                 duration={8}
                                 size={300}
-                                className="from-transparent via-primary/40 to-transparent"
+                                className="from-transparent via-purple-500/40 to-transparent"
                             />
 
-                            <div className="mb-6 inline-flex aspect-square h-16 w-16 flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm">
-                                <Rocket className="h-8 w-8 text-primary" />
+                            <div className="mb-6 inline-flex aspect-square h-16 w-16 flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/30 to-blue-500/10 backdrop-blur-sm">
+                                <Rocket className="h-8 w-8 text-purple-300" />
                             </div>
 
                             <div className="space-y-4">
-                                <h2 className="mb-4 bg-gradient-to-r from-primary/90 to-primary/70 bg-clip-text text-3xl font-bold text-transparent">
+                                <h2 className="mb-4 bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-3xl font-bold text-transparent">
                                     Our Mission
                                 </h2>
 
-                                <p className="text-lg leading-relaxed text-muted-foreground">
+                                <p className="text-lg leading-relaxed text-gray-300">
                                     {aboutData.mission}
                                 </p>
                             </div>
@@ -145,7 +145,7 @@ export default function AboutUs1() {
 
                         <motion.div
                             whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
-                            className="group relative block overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br p-10 backdrop-blur-3xl"
+                            className="group relative block overflow-hidden rounded-2xl border border-white/10 bg-[rgba(30,30,40,0.7)] p-10 backdrop-blur-2xl"
                         >
                             <BorderBeam
                                 duration={8}
@@ -153,15 +153,15 @@ export default function AboutUs1() {
                                 className="from-transparent via-blue-500/40 to-transparent"
                                 reverse
                             />
-                            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 backdrop-blur-sm">
-                                <Target className="h-8 w-8 text-blue-500" />
+                            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/30 to-purple-500/10 backdrop-blur-sm">
+                                <Target className="h-8 w-8 text-blue-300" />
                             </div>
 
-                            <h2 className="mb-4 bg-gradient-to-r from-blue-500/90 to-blue-500/70 bg-clip-text text-3xl font-bold text-transparent">
+                            <h2 className="mb-4 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-3xl font-bold text-transparent">
                                 Our Vision
                             </h2>
 
-                            <p className="text-lg leading-relaxed text-muted-foreground">
+                            <p className="text-lg leading-relaxed text-gray-300">
                                 {aboutData.vision}
                             </p>
                         </motion.div>
@@ -177,10 +177,10 @@ export default function AboutUs1() {
                         transition={{ duration: 0.6, ease: 'easeOut' }}
                         className="mb-12 text-center"
                     >
-                        <h2 className="bg-gradient-to-r from-foreground/80 via-foreground to-foreground/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
+                        <h2 className="bg-gradient-to-r from-white via-blue-300 to-purple-300 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
                             Our Core Values
                         </h2>
-                        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
                             The principles that guide everything we do and every decision we
                             make.
                         </p>
@@ -205,7 +205,7 @@ export default function AboutUs1() {
                                     whileHover={{ y: -5, scale: 1.02 }}
                                 >
                                     <CardHoverEffect
-                                        icon={<IconComponent className="h-6 w-6" />}
+                                        icon={<IconComponent className="h-6 w-6 text-white" />}
                                         title={value.title}
                                         description={value.description}
                                         variant={
@@ -219,6 +219,7 @@ export default function AboutUs1() {
                                         }
                                         glowEffect={true}
                                         size="lg"
+                                        className="bg-[rgba(30,30,40,0.7)] border border-white/10 text-white"
                                     />
                                 </motion.div>
                             );

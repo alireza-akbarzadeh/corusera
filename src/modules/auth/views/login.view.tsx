@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -12,7 +13,7 @@ export function LoginSection() {
         <div className="rose-gradient relative min-h-screen overflow-hidden bg-background">
             <div className="absolute -top-10 left-0 h-1/2 w-full rounded-b-full bg-gradient-to-b from-background to-transparent blur"></div>
             <div className="absolute -top-64 left-0 h-1/2 w-full rounded-full bg-gradient-to-b from-primary/80 to-transparent blur-3xl"></div>
-            <div className="relative z-10 grid min-h-screen grid-cols-1 md:grid-cols-2">
+            <div className="relative z-9 grid min-h-screen grid-cols-1 md:grid-cols-2">
                 <motion.div
                     className="hidden flex-1 items-center justify-center space-y-8 p-8 text-center md:flex"
                     initial={{ opacity: 0, x: -50 }}

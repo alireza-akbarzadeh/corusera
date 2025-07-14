@@ -66,7 +66,7 @@ interface TestimonialProps {
     className?: string;
 }
 
-export default function TestimonialsCarousel({
+export function TestimonialsSection({
     testimonials = defaultTestimonials,
     title = 'What our users say',
     subtitle = 'From intuitive design to powerful features, our components have become essential tools for developers around the world.',

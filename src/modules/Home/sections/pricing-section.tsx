@@ -127,10 +127,10 @@ export function PricingSection() {
     return (
         <section id='pricing' className="container py-20">
             <div className="mb-12 space-y-4 text-center">
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                     Simple, transparent pricing for all.
                 </h2>
-                <p className="whitespace-pre-line text-lg text-muted-foreground">
+                <p className="whitespace-pre-line text-lg text-gray-300">
                     Choose the plan that works for you\nAll plans include access to our
                     platform, lead generation tools, and dedicated support.
                 </p>
@@ -177,8 +177,8 @@ export function PricingSection() {
                             opacity: { duration: 0.5 },
                         }}
                         className={cn(
-                            `relative rounded-2xl border-[1px] bg-background p-6 text-center lg:flex lg:flex-col lg:justify-center`,
-                            plan.isPopular ? 'border-2 border-primary' : 'border-border',
+                            `relative rounded-2xl border border-white/10 bg-[rgba(30,30,40,0.7)] p-6 text-center lg:flex lg:flex-col lg:justify-center`,
+                            plan.isPopular ? 'border-2 border-blue-500' : 'border-white/10',
                             'flex flex-col',
                             !plan.isPopular && 'mt-5',
                             index === 0 || index === 2
@@ -189,19 +189,19 @@ export function PricingSection() {
                         )}
                     >
                         {plan.isPopular && (
-                            <div className="absolute right-0 top-0 flex items-center rounded-bl-xl rounded-tr-xl bg-primary px-2 py-0.5">
-                                <Star className="h-4 w-4 fill-current text-primary-foreground" />
-                                <span className="ml-1 font-sans font-semibold text-primary-foreground">
+                            <div className="absolute right-0 top-0 flex items-center rounded-bl-xl rounded-tr-xl bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-0.5">
+                                <Star className="h-4 w-4 fill-current text-white" />
+                                <span className="ml-1 font-sans font-semibold text-white">
                                     Popular
                                 </span>
                             </div>
                         )}
                         <div className="flex flex-1 flex-col">
-                            <p className="text-base font-semibold text-muted-foreground">
+                            <p className="text-base font-semibold text-blue-200">
                                 {plan.name}
                             </p>
                             <div className="mt-6 flex items-center justify-center gap-x-2">
-                                <span className="text-5xl font-bold tracking-tight text-foreground">
+                                <span className="text-5xl font-bold tracking-tight text-white">
                                     <NumberFlow
                                         value={
                                             isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
@@ -221,26 +221,26 @@ export function PricingSection() {
                                     />
                                 </span>
                                 {plan.period !== 'Next 3 months' && (
-                                    <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
+                                    <span className="text-sm font-semibold leading-6 tracking-wide text-blue-200">
                                         / {plan.period}
                                     </span>
                                 )}
                             </div>
 
-                            <p className="text-xs leading-5 text-muted-foreground">
+                            <p className="text-xs leading-5 text-gray-400">
                                 {isMonthly ? 'billed monthly' : 'billed annually'}
                             </p>
 
                             <ul className="mt-5 flex flex-col gap-2">
                                 {plan.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start gap-2">
-                                        <Check className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
-                                        <span className="text-left">{feature}</span>
+                                        <Check className="mt-1 h-4 w-4 flex-shrink-0 text-blue-400" />
+                                        <span className="text-left text-gray-200">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
 
-                            <hr className="my-4 w-full" />
+                            <hr className="my-4 w-full border-white/10" />
 
                             <Link
                                 href={plan.href}
@@ -249,15 +249,15 @@ export function PricingSection() {
                                         variant: 'outline',
                                     }),
                                     'group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter',
-                                    'transform-gpu ring-offset-current transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground hover:ring-2 hover:ring-primary hover:ring-offset-1',
+                                    'transform-gpu ring-offset-current transition-all duration-300 ease-out hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white hover:ring-2 hover:ring-blue-500 hover:ring-offset-1',
                                     plan.isPopular
-                                        ? 'bg-primary text-primary-foreground'
-                                        : 'bg-background text-foreground',
+                                        ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white'
+                                        : 'bg-[rgba(30,30,40,0.7)] text-white',
                                 )}
                             >
                                 {plan.buttonText}
                             </Link>
-                            <p className="mt-6 text-xs leading-5 text-muted-foreground">
+                            <p className="mt-6 text-xs leading-5 text-gray-400">
                                 {plan.description}
                             </p>
                         </div>

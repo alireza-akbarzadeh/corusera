@@ -52,7 +52,7 @@ const stats = [
   },
 ];
 
-export function DashboardModule() {
+export function DashboardView() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 

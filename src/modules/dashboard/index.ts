@@ -1,1 +1,1 @@
-export { DashboardModule } from "./view/index";
+export { DashboardView } from "./view/dashboard.view";
