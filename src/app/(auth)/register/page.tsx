@@ -1,7 +1,8 @@
+import { RegisterView } from "@/modules/auth";
 
 export default function Register() {
 
     return (
-        <p>login page</p>
+        <RegisterView />
     )
 }
