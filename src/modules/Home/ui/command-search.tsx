@@ -138,7 +138,7 @@ export function CommandSearch({ user, open, setOpen }: CommandSearchProps) {
                 <div className="w-full flex-1 md:w-auto md:flex-none">
                     <Button
                         variant="outline"
-                        className="relative w-full justify-start text-sm text-muted-foreground md:w-[300px] lg:w-[400px] bg-transparent"
+                        className="relative w-full justify-start text-sm text-muted-foreground md:w-[250px] lg:w-[300px] bg-transparent"
                         onClick={() => setOpen(true)}
                     >
                         <Search className="mr-2 h-4 w-4" />
