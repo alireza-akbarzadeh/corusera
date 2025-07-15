@@ -10,16 +10,14 @@ import Link from "next/link"
 import AuthLayoutView from "./Auth.view"
 import { SocialButtons } from "../ui/social-buttons"
 
-
 export function LoginView() {
-
     return (
         <AuthLayoutView>
             {/* Main Content */}
             <div className="relative z-10 grid min-h-screen grid-cols-1 md:grid-cols-2">
                 {/* Left Side - Illustration */}
                 <motion.div
-                    className="hidden flex-1 items-center justify-center space-y-8 p-8 text-center md:flex"
+                    className="hidden flex-1 items-center  justify-center space-y-8 p-8 text-center md:flex"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}

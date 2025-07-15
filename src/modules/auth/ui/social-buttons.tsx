@@ -5,22 +5,29 @@ import { toast } from "sonner"
 import { motion } from "motion/react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useState, useTransition } from "react"
+import { HttpStatusCode, HttpStatusText } from "@/lib/http-status"
 
+type SocialPorvider = "github" | "google"
 export function SocialButtons() {
-
+    const [loading, setLoading] = useState<SocialPorvider | "none">("none")
     const CALLBACK_URL = "/"
 
-    const handleLogin = (type: "github" | "google") => {
+    const handleLogin = (type: SocialPorvider) => {
+        setLoading(type)
         authClient.signIn.social({
             provider: type,
             callbackURL: CALLBACK_URL,
             fetchOptions: {
                 onSuccess: () => {
                     toast.success(Messages.SucessLoging)
+                    setLoading("none")
                 },
-                onError: (error) => {
-                    toast.error(error.error.message)
-                }
+                onError: () => {
+                    toast.error(HttpStatusText[HttpStatusCode.InternalServerError])
+                    setLoading("none")
+                },
+
             }
         })
     }
@@ -35,6 +42,8 @@ export function SocialButtons() {
         >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button
+                    loading={loading === "google"}
+                    disabled={loading === "github"}
                     onClick={() => handleLogin("google")}
                     variant="secondary"
                     className="w-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"
@@ -46,6 +55,8 @@ export function SocialButtons() {
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button
+                    loading={loading === "github"}
+                    disabled={loading === 'google'}
                     onClick={() => handleLogin('github')}
                     variant="secondary"
                     className="w-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"

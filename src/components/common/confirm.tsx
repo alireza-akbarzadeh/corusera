@@ -79,7 +79,7 @@ export function ConfirmDialog(props: ConfirmDialogProps) {
                 <div className="flex flex-col items-center gap-2">
                     <div
                         className="flex size-9 shrink-0 items-center justify-center rounded-full border"
-                        aria-hidden="true"
+                            aria-hidden="true"
                     >
                         <Icon className="opacity-80" size={iconSize} />
                     </div>
@@ -89,7 +89,7 @@ export function ConfirmDialog(props: ConfirmDialogProps) {
                             {description} <span className="text-primary">{confirmationText}</span>.
                         </DialogDescription>
                     </DialogHeader>
-                </div>
+                        </div>
 
                 <form
                     onSubmit={(e) => {
