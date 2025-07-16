@@ -35,29 +35,23 @@ const meta = {
             },
         },
     },
-    argTypes: {
-        count: {
-            name: 'Avatar Count',
-            control: { type: 'range', min: 1, max: 6, step: 1 },
-        },
-    },
-    args: {
-        count: 4,
-    },
 } satisfies Meta<typeof AvatarStack>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-// Default example with 4 avatars
+// Default example using custom story controls
 export const Default: Story = {
-    render: ({ count }) => (
-        <AvatarStack>{createAvatars(defaultUsers.slice(0, count))}</AvatarStack>
-    ),
+    render: (_, { globals }) => {
+        const count = 4; // Static here, or read from context/globals
+        return (
+            <AvatarStack>{createAvatars(defaultUsers.slice(0, count))}</AvatarStack>
+        );
+    },
 };
 
-// Another variant: only initials fallback
+// Variant: fallback initials only
 export const WithFallbackOnly: Story = {
     render: () => (
         <AvatarStack>
