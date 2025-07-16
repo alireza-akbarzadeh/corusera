@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { useState, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import NumberFlow from '@number-flow/react';
+import { Spotlight } from '../ui/spotlight';
 
 // Define your plans
 const plans = [
@@ -125,7 +126,12 @@ export function PricingSection() {
     };
 
     return (
-        <section id='pricing' className="container mx-auto py-20">
+        <section id='pricing' className="container mx-auto py-20 relative">
+            <Spotlight
+                gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(336, 100%, 50%, 0.08) 0, hsla(341, 100%, 55%, 0.04) 50%, hsla(336, 100%, 45%, 0) 80%)"
+                gradientSecond="radial-gradient(50% 50% at 50% 50%, hsla(333, 100%, 85%, 0.08) 0, hsla(335, 100%, 55%, 0.04) 80%, transparent 100%)"
+                gradientThird="radial-gradient(50% 50% at 50% 50%, hsla(332, 100%, 85%, 0.06) 0, hsla(327, 100%, 85%, 0.06) 80%, transparent 100%)"
+            />
             <div className="mb-12 space-y-4 text-center">
                 <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                     Simple, transparent pricing for all.

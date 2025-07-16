@@ -1,8 +1,9 @@
-import {HomeView} from "@/modules/Home";
-import {headers} from "next/headers";
-import {auth} from "@/lib/auth";
-import {Navbar} from "@/modules/Home/ui/navbar";
-import type {User} from "better-auth";
+import { HomeView } from "@/modules/Home";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
+import { Navbar } from "@/modules/Home/ui/navbar";
+import type { User } from "better-auth";
+import HeroSection from "@/modules/Home/sections/hero-section";
 
 
 export default async function HomePage() {
@@ -12,8 +13,9 @@ export default async function HomePage() {
 
     return (
         <>
-            <Navbar user={session?.user as User}/>
-            <HomeView/>
+            <Navbar user={session?.user as User} />
+            <HeroSection />
+            <HomeView />
         </>
     )
 }

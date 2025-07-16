@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { navigationItems } from "./navbar"
+import { NavigationMenuLink } from "@/components/ui/navigation-menu"
 
 interface NavbarProps {
     user: AuthUser | null
@@ -68,5 +69,35 @@ export function MobileNav({ user }: { user: AuthUser | null }) {
                 </>
             )}
         </div>
+    )
+}
+
+
+
+
+
+export const ListItem = ({
+    className,
+    title,
+    children,
+    ...props
+}: {
+    className?: string
+    title: string
+    children: React.ReactNode
+    href: string
+}) => {
+    return (
+        <li>
+            <NavigationMenuLink asChild>
+                <Link
+                    className="block dark:text-white select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                    {...props}
+                >
+                    <div className="text-sm text-white font-medium leading-none">{title}</div>
+                    <p className="line-clamp-2 text-white! text-sm leading-snug ">{children}</p>
+                </Link>
+            </NavigationMenuLink>
+        </li>
     )
 }
