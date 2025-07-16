@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Play, BookOpen, Users, Award, ArrowRight, Sparkles } from "lucide-react"
 
 export default function HeroSection() {
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
