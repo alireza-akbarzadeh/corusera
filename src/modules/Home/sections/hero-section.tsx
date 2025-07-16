@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "motion/react"
+import { easeInOut, motion } from "motion/react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Play, BookOpen, Users, Award, ArrowRight, Sparkles } from "lucide-react"
@@ -24,11 +24,10 @@ export default function HeroSection() {
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: "easeOut",
+                ease: easeInOut,
             },
         },
     }
-
     const floatingVariants = {
         animate: {
             y: [-10, 10, -10],
@@ -36,7 +35,7 @@ export default function HeroSection() {
             transition: {
                 duration: 6,
                 repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
+                ease: easeInOut,
             },
         },
     }
@@ -150,6 +149,6 @@ export default function HeroSection() {
 
             {/* Bottom Gradient */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent" />
-        </section>
+        </section >
     )
 }
