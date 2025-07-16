@@ -15,6 +15,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import {
   LayoutDashboard,
@@ -47,6 +48,7 @@ const menuItems = [
 
 export const AdminSidebar = memo(() => {
   const { theme, setTheme } = useTheme();
+  const { open } = useSidebar()
 
   return (
     <Sidebar collapsible="icon">
@@ -68,7 +70,7 @@ export const AdminSidebar = memo(() => {
         </SidebarMenu>
       </SidebarHeader>
 
-      <SidebarContent>
+      <SidebarContent className={!open ? "w-[50px]" : 'w-[200px]'} >
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
           <SidebarGroupContent>

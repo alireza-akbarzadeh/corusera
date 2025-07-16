@@ -123,6 +123,6 @@ export function DashboardView() {
           </div>
         </div>
       </SidebarInset>
-    </SidebarProvider>
+    </SidebarProvider >
   );
 }
