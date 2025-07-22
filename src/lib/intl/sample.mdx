@@ -1,0 +1,38 @@
+# 🌍 Custom Internationalization (i18n) System – Full Example & Explanation
+
+This guide explains how to use a **custom internationalization system** without third-party libraries in a modern Next.js app. It includes examples for both **client** and **server-side** usage.
+
+---
+
+## 📦 Client Component Example: `Welcome.tsx`
+
+```tsx
+'use client';
+
+
+export default function Welcome() {
+  const { t, setLocale } = useTranslation();
+
+  return (
+    <div>
+      <p>{t('greeting', { values: { name: 'Alireza' } })}</p>
+      <p>{t('item_count', { count: 1 })}</p>
+      <p>{t('item_count', { count: 3 })}</p>
+      <button onClick={() => setLocale('fa')}>Switch to Farsi</button>
+    </div>
+  );
+}
+```
+
+
+```tsx
+
+
+export async function generateMetadata({ params }: { params: { lang: string } }) {
+  const t = getTranslator(params.lang as any);
+  return {
+    title: t('greeting', { values: { name: 'Meta' } }),
+  };
+}
+
+```

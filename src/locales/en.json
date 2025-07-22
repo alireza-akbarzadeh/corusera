@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "success_login": "You're now signed in, {name}! Redirecting you shortly...",
+    "success_logout": "You've been logged out successfully. See you soon!",
+    "email_sent": "We've sent an email to your inbox. Please check it to continue.",
+    "fail_to_send_email": "Failed to send the email."
+  },
+  "home": {
+    "welcome": "Welcome to the homepage!",
+    "intro": "Discover the latest updates and features."
+  },
+  "dashboard": {
+    "stats_title": "Your Statistics",
+    "no_data": "No data available."
+  }
+}

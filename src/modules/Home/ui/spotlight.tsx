@@ -62,7 +62,7 @@ export const Spotlight = ({
 
                 <div
                     style={{
-                        transform: 'rotate(-45deg) translate(5%, -50%)',
+                        transform: 'rotate(-45deg) translate.ts(5%, -50%)',
                         background: gradientSecond,
                         width: `${smallWidth}px`,
                         height: `${height}px`,
@@ -72,7 +72,7 @@ export const Spotlight = ({
 
                 <div
                     style={{
-                        transform: 'rotate(-45deg) translate(-180%, -70%)',
+                        transform: 'rotate(-45deg) translate.ts(-180%, -70%)',
                         background: gradientThird,
                         width: `${smallWidth}px`,
                         height: `${height}px`,
@@ -105,7 +105,7 @@ export const Spotlight = ({
 
                 <div
                     style={{
-                        transform: 'rotate(45deg) translate(-5%, -50%)',
+                        transform: 'rotate(45deg) translate.ts(-5%, -50%)',
                         background: gradientSecond,
                         width: `${smallWidth}px`,
                         height: `${height}px`,
@@ -115,7 +115,7 @@ export const Spotlight = ({
 
                 <div
                     style={{
-                        transform: 'rotate(45deg) translate(180%, -70%)',
+                        transform: 'rotate(45deg) translate.ts(180%, -70%)',
                         background: gradientThird,
                         width: `${smallWidth}px`,
                         height: `${height}px`,

@@ -1,16 +1,17 @@
 import { authClient } from "@/lib/auth-client"
-import { Messages } from "@/lib/messages"
 import { toast } from "sonner"
 
 import { motion } from "motion/react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useState, useTransition } from "react"
+import { useState } from "react"
 import { HttpStatusCode, HttpStatusText } from "@/lib/http-status"
+import {useMessages} from "@/lib/intl/useMessages";
 
 type SocialPorvider = "github" | "google"
 export function SocialButtons() {
-    const [loading, setLoading] = useState<SocialPorvider | "none">("none")
+    const [loading, setLoading] = useState<SocialPorvider | "none">("none");
+    const { t } = useMessages();
     const CALLBACK_URL = "/"
 
     const handleLogin = (type: SocialPorvider) => {
@@ -20,7 +21,7 @@ export function SocialButtons() {
             callbackURL: CALLBACK_URL,
             fetchOptions: {
                 onSuccess: () => {
-                    toast.success(Messages.SucessLoging)
+                    toast.success(t('auth.success_login', { values: { name: 'Alireza' } }))
                     setLoading("none")
                 },
                 onError: () => {

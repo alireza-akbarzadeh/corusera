@@ -188,7 +188,7 @@ export function PricingSection() {
                             'flex flex-col',
                             !plan.isPopular && 'mt-5',
                             index === 0 || index === 2
-                                ? '-translate-z-[50px] rotate-y-[10deg] z-0 translate-x-0 translate-y-0 transform'
+                                ? '-translate.ts-z-[50px] rotate-y-[10deg] z-0 translate.ts-x-0 translate.ts-y-0 transform'
                                 : 'z-10',
                             index === 0 && 'origin-right',
                             index === 2 && 'origin-left',
