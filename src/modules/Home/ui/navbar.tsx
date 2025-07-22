@@ -75,7 +75,6 @@ export function Navbar({ user }: NavbarProps) {
     document.addEventListener('keydown', down);
     return () => document.removeEventListener('keydown', down);
   }, []);
-
   return (
     <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-gray-950 via-slate-900 to-black">
       <div className="px-6 flex h-16 items-center">
