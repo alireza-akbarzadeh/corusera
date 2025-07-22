@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // 1. Launch and Debug Next.js App (client-side + VSCode breakpoints)
+    {
+      "name": "Next.js: Launch Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000", // default Next.js dev port
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "trace": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+
+    // 2. Attach to already running Chrome instance
+    {
+      "name": "Next.js: Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+
+    // 3. Debug the Next.js server-side code (Node.js side of App Router)
+    {
+      "name": "Next.js: Debug Server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "skipFiles": ["<node_internals>/**"]
+    },
+
+    // 4. Optional: Debug Storybook
+    {
+      "name": "Storybook: Launch Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:6006",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "trace": true
+    }
+  ]
+}
