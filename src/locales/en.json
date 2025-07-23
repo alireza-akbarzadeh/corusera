@@ -3,7 +3,8 @@
     "success_login": "You're now signed in, {name}! Redirecting you shortly...",
     "success_logout": "You've been logged out successfully. See you soon!",
     "email_sent": "We've sent an email to your inbox. Please check it to continue.",
-    "fail_to_send_email": "Failed to send the email."
+    "fail_to_send_email": "Failed to send the email.",
+    "continue_with_email": "Continue with Email"
   },
   "home": {
     "welcome": "Welcome to the homepage!",

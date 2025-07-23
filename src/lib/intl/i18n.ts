@@ -1,51 +1,56 @@
-import {translations, defaultLocale, type Locale, type TranslationKey} from './translations';
+import {
+  translations,
+  defaultLocale,
+  type Locale,
+  type TranslationKey,
+} from './translations';
 
 type InterpolationValues = Record<string, string | number>;
 
 const interpolate = (template: string, values?: InterpolationValues) => {
-    if (!values) return template;
-    return template.replace(/{(.*?)}/g, (_, key) => values[key]?.toString() ?? '');
+  if (!values) return template;
+  return template.replace(
+    /{(.*?)}/g,
+    (_, key) => values[key]?.toString() ?? ''
+  );
 };
 
 type TranslateOptions = {
-    locale?: Locale;
-    values?: InterpolationValues;
-    count?: number;
-    fallback?: string;
+  locale?: Locale;
+  values?: InterpolationValues;
+  count?: number;
+  fallback?: string;
 };
 
 export const translate = (
-    key: TranslationKey,
-    options: TranslateOptions = {}
+  key: string,
+  {
+    locale,
+    values,
+    fallback,
+  }: {
+    locale: 'en' | 'fa';
+    values?: Record<string, string | number>;
+    fallback?: string;
+  }
 ): string => {
-    const {
-        locale = defaultLocale,
-        values,
-        count,
-        fallback = key,
-    } = options;
+  const keys = key.split('.');
+  let result: any = translations[locale];
 
-    const messages = translations[locale] as any;
-    let text = messages[key];
+  for (const k of keys) {
+    result = result?.[k];
+    if (result === undefined) break;
+  }
 
-    // Fallback for pluralization
-    if (count != null) {
-        const pluralKey = `${key}_plural`;
-        if (count > 1 && messages[pluralKey]) {
-            text = messages[pluralKey];
-        }
+  if (typeof result === 'string') {
+    if (values) {
+      return Object.entries(values).reduce(
+        (str, [k, v]) => str.replaceAll(`{${k}}`, String(v)),
+        result
+      );
     }
+    return result;
+  }
 
-    if (!text) {
-        console.warn(`[i18n] Missing translation: "${key}" in "${locale}"`);
-        return fallback;
-    }
-
-    // ✅ Only include `count` if it's defined
-    const interpolationValues: InterpolationValues = {
-        ...values,
-        ...(count !== undefined ? { count } : {}),
-    };
-
-    return interpolate(text, interpolationValues);
+  return fallback || key; // fallback to key if not found
 };
